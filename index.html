@@ -34,6 +34,13 @@
             font-weight: 700;
         }
 
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #FF6F61;
+        }
+
         p {
             font-size: 1.2em;
             line-height: 1.6;
@@ -43,17 +50,6 @@
         .download-button {
             display: inline-block;
             margin: 20px 0;
-            padding: 15px 25px;
-            background-color: #FF6F61;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-
-        .download-button:hover {
-            background-color: #D9418C;
         }
 
         nav a {
@@ -67,16 +63,28 @@
         nav a:hover {
             color: #fff;
         }
+
+        img.game-logo {
+            width: 150px;
+            height: auto;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>GyroHero - The Ultimate Gyroscope Challenge</h1>
-        <p>Welcome to GyroHero, the most exhilarating gyroscope-based game available on the App Store. Challenge your skills, master the gyroscope, and compete against others to become the ultimate GyroHero!</p>
-        <a href="https://apps.apple.com/fj/app/gyrohero-gyroscope-challenge/id6532621812" class="download-button">Download on the App Store</a>
+        <h1>GyroHero</h1>
+        <h2>The Ultimate Gyroscope Challenge</h2>
+        <img src="game_logo.png" alt="GyroHero Logo" class="game-logo">
+        <p>Put your reflexes to the test with Gyro Hero, the ultimate challenge where you tilt, turn, and shake your way through various commands. With seamless voice and gyroscope controls, and a user-friendly design, this game is perfect for all ages. Track your performance with in-depth analytics and strive to beat your high scores!</p>
+        <div class="download-button">
+            <a href="https://apps.apple.com/fj/app/gyrohero-gyroscope-challenge/id6532621812">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="width: 180px; height: auto;">
+            </a>
+        </div>
         <nav>
-            <a href="terms.html">Terms of Use</a> | 
-            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a> | 
+            <a href="privacy-policy.html">Privacy Policy</a>
         </nav>
     </div>
 </body>
