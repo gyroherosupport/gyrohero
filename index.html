@@ -3,42 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GyroHero - Home</title>
+    <title>GyroHero - The Ultimate Gyroscope Challenge</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
         body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #FF6F61, #D9418C);
+            color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        .container {
             text-align: center;
         }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
         h1 {
             font-size: 2.5em;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
-        nav a {
-            display: block;
-            margin: 10px 0;
+
+        p {
             font-size: 1.2em;
-            text-decoration: none;
-            color: #007BFF;
+            line-height: 1.6;
+            margin: 20px 0;
         }
+
+        .download-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 15px 25px;
+            background-color: #FF6F61;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #D9418C;
+        }
+
+        nav a {
+            color: #FF6F61;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
         nav a:hover {
-            text-decoration: underline;
+            color: #fff;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>GyroHero - The Ultimate Gyroscope Challenge</h1>
+        <p>Welcome to GyroHero, the most exhilarating gyroscope-based game available on the App Store. Challenge your skills, master the gyroscope, and compete against others to become the ultimate GyroHero!</p>
+        <a href="https://apps.apple.com/fj/app/gyrohero-gyroscope-challenge/id6532621812" class="download-button">Download on the App Store</a>
         <nav>
-            <a href="terms.html">Terms of Use</a>
-            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a> | 
+            <a href="privacy-policy.html">Privacy Policy</a>
         </nav>
     </div>
 </body>
