@@ -34,6 +34,8 @@
             margin-bottom: 10px;
             font-weight: 700;
             word-wrap: break-word; /* Allows long words to break and wrap to the next line */
+            word-break: break-word;
+            hyphens: auto;
         }
 
         h2 {
@@ -80,11 +82,12 @@
         /* Responsive styles */
         @media screen and (max-width: 600px) {
             h1 {
-                font-size: 2em; /* Reduce font size for smaller screens */
+                font-size: 1.8em; /* Further reduce font size for smaller screens */
+                margin-bottom: 10px; /* Adjust margin */
             }
 
             h2 {
-                font-size: 1.5em; /* Adjust subheading size */
+                font-size: 1.4em; /* Adjust subheading size */
             }
 
             p {
@@ -92,7 +95,7 @@
             }
 
             .container {
-                padding: 15px; /* Reduce padding on smaller screens */
+                padding: 10px; /* Reduce padding on smaller screens */
             }
 
             .download-button img {
