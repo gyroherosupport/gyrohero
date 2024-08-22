@@ -19,7 +19,7 @@
             align-items: center;
             height: 100vh;
             text-align: center;
-            overflow: auto; /* Added to ensure scrolling if content overflows */
+            overflow: auto;
         }
 
         .container {
@@ -52,6 +52,11 @@
 
         .download-button {
             display: inline-block;
+            margin: 20px 10px 20px 0;
+        }
+
+        .product-hunt-badge {
+            display: inline-block;
             margin: 20px 0;
         }
 
@@ -71,24 +76,6 @@
             width: 150px;
             height: auto;
             margin: 20px 0;
-        }
-
-        /* Responsive iframe container */
-        .iframe-container {
-            position: relative;
-            padding-bottom: 81%; /* Aspect ratio: height divided by width */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
         }
 
         /* Responsive styles */
@@ -112,29 +99,27 @@
             .download-button img {
                 width: 150px;
             }
-
-            .iframe-container {
-                padding-bottom: 100%; /* Adjust aspect ratio for smaller screens */
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Embed Product Hunt card -->
-        <div class="iframe-container">
-            <iframe style="border: none;" src="https://cards.producthunt.com/cards/products/601333" frameborder="0" scrolling="no" allowfullscreen></iframe>
-        </div>
-
         <h1>GyroHero</h1>
         <h2>The Ultimate Gyroscope Challenge</h2>
         <img src="game_logo.png" alt="GyroHero Logo" class="game-logo">
         <p>Put your reflexes to the test with Gyro Hero, the ultimate challenge where you tilt, turn, and shake your way through various commands. With seamless voice and gyroscope controls, and a user-friendly design, this game is perfect for all ages. Track your performance with in-depth analytics and strive to beat your high scores!</p>
+        
         <div class="download-button">
             <a href="https://apps.apple.com/app/gyrohero/id6532621812">
                 <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="width: 180px; height: auto;">
             </a>
         </div>
+        <div class="product-hunt-badge">
+            <a href="https://www.producthunt.com/posts/gyrohero?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-gyrohero" target="_blank">
+                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=482577&theme=light" alt="GyroHero - Gyroscope&#0032;Challenge&#0046;&#0032;Test&#0032;Your&#0032;Reflexes | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
+            </a>
+        </div>
+
         <nav>
             <a href="terms.html">Terms of Use</a> | 
             <a href="privacy.html">Privacy Policy</a>
