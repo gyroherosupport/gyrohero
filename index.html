@@ -19,6 +19,7 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            overflow: auto; /* Added to ensure scrolling if content overflows */
         }
 
         .container {
@@ -33,7 +34,7 @@
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 700;
-            word-wrap: break-word; /* Allows long words to break and wrap to the next line */
+            word-wrap: break-word;
         }
 
         h2 {
@@ -72,32 +73,59 @@
             margin: 20px 0;
         }
 
+        /* Responsive iframe container */
+        .iframe-container {
+            position: relative;
+            padding-bottom: 81%; /* Aspect ratio: height divided by width */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         /* Responsive styles */
         @media screen and (max-width: 600px) {
             h1 {
-                font-size: 2em; /* Reduce font size for smaller screens */
+                font-size: 2em;
             }
 
             h2 {
-                font-size: 1.5em; /* Adjust subheading size */
+                font-size: 1.5em;
             }
 
             p {
-                font-size: 1em; /* Adjust paragraph size */
+                font-size: 1em;
             }
 
             .container {
-                padding: 15px; /* Reduce padding on smaller screens */
+                padding: 15px;
             }
 
             .download-button img {
-                width: 150px; /* Adjust button size */
+                width: 150px;
+            }
+
+            .iframe-container {
+                padding-bottom: 100%; /* Adjust aspect ratio for smaller screens */
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Embed Product Hunt card -->
+        <div class="iframe-container">
+            <iframe style="border: none;" src="https://cards.producthunt.com/cards/products/601333" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+
         <h1>GyroHero</h1>
         <h2>The Ultimate Gyroscope Challenge</h2>
         <img src="game_logo.png" alt="GyroHero Logo" class="game-logo">
