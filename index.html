@@ -19,7 +19,6 @@
             align-items: center;
             height: 100vh;
             text-align: center;
-            overflow: auto;
         }
 
         .container {
@@ -34,8 +33,7 @@
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 700;
-            word-wrap: break-word;
-            line-height: 1.2; /* Adjusted line height for better fitting */
+            word-wrap: break-word; /* Allows long words to break and wrap to the next line */
         }
 
         h2 {
@@ -82,25 +80,27 @@
         /* Responsive styles */
         @media screen and (max-width: 600px) {
             h1 {
-                font-size: 2em; /* Reduce font size for mobile screens */
-                line-height: 1.2; /* Adjust line height for better visibility */
-                margin-bottom: 15px; /* Adjust margin for spacing */
+                font-size: 2em; /* Reduce font size for smaller screens */
             }
 
             h2 {
-                font-size: 1.4em; /* Adjust font size */
+                font-size: 1.5em; /* Adjust subheading size */
             }
 
             p {
-                font-size: 1em;
+                font-size: 1em; /* Adjust paragraph size */
             }
 
             .container {
-                padding: 15px;
+                padding: 15px; /* Reduce padding on smaller screens */
             }
 
             .download-button img {
-                width: 150px;
+                width: 150px; /* Adjust button size */
+            }
+
+            .product-hunt-badge img {
+                width: 200px; /* Adjust badge size for smaller screens */
             }
         }
     </style>
@@ -117,7 +117,6 @@
                 <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="width: 180px; height: auto;">
             </a>
         </div>
-        <br>
         <div class="product-hunt-badge">
             <a href="https://www.producthunt.com/posts/gyrohero?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-gyrohero" target="_blank">
                 <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=482577&theme=light" alt="GyroHero - Gyroscope&#0032;Challenge&#0046;&#0032;Test&#0032;Your&#0032;Reflexes | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
