@@ -5,131 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-itunes-app" content="app-id=6532621812, app-argument=myURL">
     <title>GyroHero - The Ultimate Gyroscope Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-
         body {
             font-family: 'Raleway', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #FF6F61, #D9418C);
-            color: #fff;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, #FF6F61, #D9418C);
+            color: white;
+            padding: 60px 20px;
             text-align: center;
         }
-
-        .container {
-            max-width: 800px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-            word-wrap: break-word; /* Allows long words to break and wrap to the next line */
-            word-break: break-word;
-            hyphens: auto;
-        }
-
-        h2 {
-            font-size: 1.8em;
+        header img {
+            width: 120px;
             margin-bottom: 20px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
             font-weight: 700;
-            color: #FF6F61;
         }
-
-        p {
+        header p {
             font-size: 1.2em;
-            line-height: 1.6;
-            margin: 20px 0;
+            margin: 20px 0 40px;
         }
-
-        .download-button {
+        .download-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+        .download-section a {
             display: inline-block;
-            margin: 20px 10px 20px 0;
+            margin: 10px;
+            text-decoration: none;
         }
-
-        .product-hunt-badge {
-            display: inline-block;
-            margin: 20px 0;
+        .download-section img {
+            width: 180px;
+            height: auto;
         }
-
-        nav a {
+        .features {
+            padding: 60px 20px;
+            background-color: #f7f7f7;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+        .features .feature-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .features .feature-item {
+            flex: 1;
+            margin: 20px;
+            max-width: 300px;
+        }
+        .features .feature-item img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        .features .feature-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .features .feature-item p {
+            font-size: 1em;
+            color: #666;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: auto;
+        }
+        footer a {
             color: #FF6F61;
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
+            margin: 0 15px;
         }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-        img.game-logo {
-            width: 150px;
-            height: auto;
-            margin: 20px 0;
-        }
-
-        /* Responsive styles */
-        @media screen and (max-width: 600px) {
-            h1 {
-                font-size: 1.8em; /* Further reduce font size for smaller screens */
-                margin-bottom: 10px; /* Adjust margin */
-            }
-
-            h2 {
-                font-size: 1.4em; /* Adjust subheading size */
-            }
-
-            p {
-                font-size: 1em; /* Adjust paragraph size */
-            }
-
-            .container {
-                padding: 10px; /* Reduce padding on smaller screens */
-            }
-
-            .download-button img {
-                width: 150px; /* Adjust button size */
-            }
-
-            .product-hunt-badge img {
-                width: 200px; /* Adjust badge size for smaller screens */
-            }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
+        <img src="game_logo.png" alt="GyroHero Logo">
         <h1>GyroHero</h1>
-        <h2>The Ultimate Gyroscope Challenge</h2>
-        <img src="game_logo.png" alt="GyroHero Logo" class="game-logo">
-        <p>Put your reflexes to the test with Gyro Hero, the ultimate challenge where you tilt, turn, and shake your way through various commands. With seamless voice and gyroscope controls, and a user-friendly design, this game is perfect for all ages. Track your performance with in-depth analytics and strive to beat your high scores!</p>
-        
-        <div class="download-button">
-            <a href="https://apps.apple.com/app/gyrohero/id6532621812">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="width: 180px; height: auto;">
-            </a>
+        <p>The Ultimate Gyroscope Challenge</p>
+    </header>
+    
+    <div class="download-section">
+        <a href="https://apps.apple.com/app/gyrohero/id6532621812">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+        <a href="https://www.producthunt.com/posts/gyrohero?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-gyrohero" target="_blank">
+            <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=482577&theme=light" alt="GyroHero on Product Hunt">
+        </a>
+    </div>
+    
+    <section class="features">
+        <h2>Features</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <img src="feature_icon1.png" alt="Feature 1">
+                <h3>Seamless Controls</h3>
+                <p>Experience seamless voice and gyroscope controls for an immersive gaming experience.</p>
+            </div>
+            <div class="feature-item">
+                <img src="feature_icon2.png" alt="Feature 2">
+                <h3>Analytics</h3>
+                <p>Track your performance with in-depth analytics and strive to beat your high scores!</p>
+            </div>
+            <div class="feature-item">
+                <img src="feature_icon3.png" alt="Feature 3">
+                <h3>User-Friendly Design</h3>
+                <p>Enjoy a user-friendly interface that makes the game accessible to players of all ages.</p>
+            </div>
         </div>
-        <div class="product-hunt-badge">
-            <a href="https://www.producthunt.com/posts/gyrohero?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-gyrohero" target="_blank">
-                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=482577&theme=light" alt="GyroHero - Gyroscope&#0032;Challenge&#0046;&#0032;Test&#0032;Your&#0032;Reflexes | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
-            </a>
-        </div>
-
-        <nav>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 GyroHero. All rights reserved.</p>
+        <p>
             <a href="terms.html">Terms of Use</a> | 
             <a href="privacy.html">Privacy Policy</a>
-        </nav>
-    </div>
+        </p>
+    </footer>
 </body>
 </html>
