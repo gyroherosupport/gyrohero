@@ -33,17 +33,15 @@
             margin-bottom: 10px;
             border-radius: 22% / 22%; /* Rounded corners, similar to Apple style */
             overflow: hidden;
-            display: inline-block;
-            vertical-align: middle;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         h1 {
             font-family: 'Lora', serif;
             font-size: 2.5em;
-            margin-bottom: 10px;
+            margin: 10px 0 5px 0; /* Adjust margins to bring the subtitle closer */
             color: #333;
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 15px;
         }
         h2 {
             font-family: 'Montserrat', sans-serif;
@@ -51,6 +49,7 @@
             margin-bottom: 20px;
             color: #777;
             font-weight: 600;
+            margin-top: 5px; /* Bring closer to the title */
         }
         p {
             font-size: 1em;
@@ -100,7 +99,6 @@
         @media screen and (max-width: 600px) {
             h1 {
                 font-size: 2.2em;
-                margin-left: 10px;
             }
             h2 {
                 font-size: 1em;
@@ -131,10 +129,8 @@ amplitude.init('fd3bfb8315062b9901539a7ce84ba1da');
 </head>
 <body>
     <div class="container">
-        <div class="icon-title-container">
-            <img src="game_logo.png" alt="GyroHero Logo" class="game-logo">
-            <h1>GyroHero</h1>
-        </div>
+        <img src="game_logo.png" alt="GyroHero Logo" class="game-logo">
+        <h1>GyroHero</h1>
         <h2>The Ultimate Gyroscope Challenge</h2>
         <p>Test your reflexes and coordination with Gyro Hero, the game that challenges you to tilt, turn, and shake your way through a series of commands. With intuitive controls and simple yet engaging gameplay, Gyro Hero is perfect for players of all ages.</p>
         
