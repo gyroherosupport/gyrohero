@@ -22,14 +22,19 @@
         }
         .container {
             max-width: 600px;
-            padding: 40px;
+            padding: 30px;
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
+        .game-logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
         h1 {
             font-family: 'Lora', serif;
-            font-size: 2.8em;
+            font-size: 2.5em;
             margin-bottom: 10px;
             color: #333;
         }
@@ -46,23 +51,32 @@
             margin: 20px 0;
             color: #555;
         }
-        .download-section {
+        .features-list {
+            text-align: left;
             margin: 20px 0;
+        }
+        .features-list li {
+            margin-bottom: 10px;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+        .download-section {
+            margin: 30px 0 20px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
+            align-items: center;
         }
         .download-section a {
             text-decoration: none;
             display: inline-block;
         }
         .download-section img {
-            width: 160px;
-            height: auto;
+            height: 54px;
             filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.2));
         }
         nav {
-            margin-top: 30px;
+            margin-top: 20px;
         }
         nav a {
             color: #888;
@@ -95,15 +109,24 @@
             }
             .download-section img {
                 width: 140px;
+                height: auto;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="game_logo.png" alt="GyroHero Logo" class="game-logo">
         <h1>GyroHero</h1>
         <h2>The Ultimate Gyroscope Challenge</h2>
-        <p>Test your reflexes with Gyro Hero, where tilting, turning, and shaking lead to victory. Experience seamless controls and track your performance with advanced analytics.</p>
+        <p>Test your reflexes and coordination with Gyro Hero, the game that challenges you to tilt, turn, and shake your way through a series of commands. With intuitive controls and simple yet engaging gameplay, Gyro Hero is perfect for players of all ages.</p>
+        
+        <ul class="features-list">
+            <li><strong>Voice and Gyroscope Commands:</strong> Use voice commands and gyroscope controls for an interactive and immersive experience.</li>
+            <li><strong>Player Analytics:</strong> Track your performance with detailed analytics, helping you understand and improve your game.</li>
+            <li><strong>Simple and Clean Graphics:</strong> Enjoy a visually straightforward and user-friendly interface.</li>
+            <li><strong>High Score Tracking:</strong> Keep an eye on your personal best scores and strive to beat them.</li>
+        </ul>
         
         <div class="download-section">
             <a href="https://apps.apple.com/app/gyrohero/id6532621812">
