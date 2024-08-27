@@ -1,5 +1,6 @@
 [
     {"src": "final-art-main.jpg", "type": "image"},
+    {"src": "main-animated.mp4", "type": "video"},
     {"src": "11.jpg", "type": "image"},
     {"src": "3.jpg", "type": "image"},
     {"src": "4.jpg", "type": "image"},
@@ -8,6 +9,5 @@
     {"src": "7.jpg", "type": "image"},
     {"src": "8.jpg", "type": "image"},
     {"src": "9.jpg", "type": "image"},
-    {"src": "10.jpg", "type": "image"},
-    {"src": "main-animated.mp4", "type": "video"}
+    {"src": "10.jpg", "type": "image"}
 ]
