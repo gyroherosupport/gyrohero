@@ -29,31 +29,27 @@
 
 <h1 style="width: 100%; text-align: center;">Art Gallery</h1>
 
+<div id="gallery"></div>
+
 <script>
-    const images = [
-        {% for filename in site.static_files %}
-            {% if filename.path contains 'art/' %}
-                "{{ filename.path | relative_url }}",
-            {% endif %}
-        {% endfor %}
-    ];
+    fetch('images.json')
+        .then(response => response.json())
+        .then(images => {
+            const gallery = document.getElementById('gallery');
 
-    const gallery = document.createElement('div');
-    gallery.classList.add('gallery');
+            images.forEach(image => {
+                const imgContainer = document.createElement('div');
+                imgContainer.classList.add('gallery-item');
 
-    images.forEach(image => {
-        const imgContainer = document.createElement('div');
-        imgContainer.classList.add('gallery-item');
+                const img = document.createElement('img');
+                img.src = image;
+                img.alt = image;
 
-        const img = document.createElement('img');
-        img.src = image;
-        img.alt = image.split('/').pop();
-
-        imgContainer.appendChild(img);
-        gallery.appendChild(imgContainer);
-    });
-
-    document.body.appendChild(gallery);
+                imgContainer.appendChild(img);
+                gallery.appendChild(imgContainer);
+            });
+        })
+        .catch(error => console.error('Error loading images:', error));
 </script>
 
 </body>
