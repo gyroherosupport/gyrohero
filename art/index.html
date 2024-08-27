@@ -8,16 +8,27 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #gallery {
+            display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 0;
-            padding: 0;
+            gap: 20px;
         }
         .gallery-item {
-            margin: 10px;
+            flex: 1 1 calc(20% - 40px); /* Adjusts the width of each item */
+            max-width: 80%; /* Ensures images are no larger than 80% of their container */
+            box-sizing: border-box;
         }
         .gallery-item img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             display: block;
             border: 2px solid #ccc;
@@ -27,7 +38,7 @@
 </head>
 <body>
 
-<h1 style="width: 100%; text-align: center;">Art Gallery</h1>
+<h1 style="text-align: center;">Art Gallery</h1>
 
 <div id="gallery"></div>
 
