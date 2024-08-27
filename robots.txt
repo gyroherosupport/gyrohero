@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /art/
+Disallow: /terms.html
+Disallow: /privacy.html
