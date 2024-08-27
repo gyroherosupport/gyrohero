@@ -58,91 +58,88 @@
             transition: opacity 0.3s;
         }
 
-/* Lightbox Styles */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    z-index: 1000;
-}
+        /* Lightbox Styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 1000;
+        }
 
-.lightbox.active {
-    opacity: 1;
-    visibility: visible;
-}
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
 
-.lightbox-content {
-    position: relative;
-    max-width: 90vw;  /* Ensures the content doesn't exceed 90% of the viewport width */
-    max-height: 90vh; /* Ensures the content doesn't exceed 90% of the viewport height */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;  /* Ensures that the content is fully contained */
-}
+        .lightbox-content {
+            position: relative;
+            width: 90vw;  /* Content will be 90% of the viewport width */
+            height: 90vh; /* Content will be 90% of the viewport height */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
 
-.lightbox-img, .lightbox-video {
-    max-width: 100%;  /* Ensures the image or video fits within the lightbox content's width */
-    max-height: 100%; /* Ensures the image or video fits within the lightbox content's height */
-    width: auto;      /* Allows the image to scale proportionally */
-    height: auto;     /* Allows the image to scale proportionally */
-    object-fit: contain; /* Ensures the entire content fits inside without cropping */
-    border-radius: 10px;
-}
+        .lightbox-img, .lightbox-video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Fits the content inside the container without cropping */
+            border-radius: 10px;
+        }
 
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2em;
-    color: #fff;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    z-index: 1001;
-}
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: #fff;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            z-index: 1001;
+        }
 
-.lightbox-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2em;
-    color: #fff;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    z-index: 1001;
-    padding: 10px;
-}
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+            color: #fff;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            z-index: 1001;
+            padding: 10px;
+        }
 
-.lightbox-arrow.left {
-    left: 20px;
-}
+        .lightbox-arrow.left {
+            left: 20px;
+        }
 
-.lightbox-arrow.right {
-    right: 20px;
-}
+        .lightbox-arrow.right {
+            right: 20px;
+        }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-    .gallery {
-        gap: 15px;
-    }
-}
-
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            .gallery {
+                gap: 15px;
+            }
+        }
     </style>
 </head>
 <body>
