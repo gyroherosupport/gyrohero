@@ -95,9 +95,10 @@
         .lightbox-img, .lightbox-video {
             width: auto;
             height: auto;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* Prevents cropping */
+            max-width: 100%;  /* Ensures the image or video fits within the lightbox content's width */
+            max-height: 100%; /* Ensures the image or video fits within the lightbox content's height */
+            object-fit: contain; /* Ensures the entire content fits inside without cropping */
+            border-radius: 10px;
         }
 
         .lightbox-close {
@@ -224,14 +225,12 @@
                 lightboxImg.style.display = 'none';
             }
             lightbox.classList.add('active');
-            enablePanning();
         }
 
         function closeLightbox() {
             lightbox.classList.remove('active');
             lightboxImg.src = '';
             lightboxVideo.src = '';
-            disablePanning();
         }
 
         function navigateLightbox(direction) {
@@ -243,59 +242,6 @@
             }
             openLightbox(currentIndex);
         }
-
-function enablePanning() {
-    const content = lightboxImg.style.display === 'block' ? lightboxImg : lightboxVideo;
-    lightboxContent.style.cursor = 'grab';
-
-    let isPanning = false;
-    let startX = 0, startY = 0, scrollLeft = 0, scrollTop = 0;
-
-    function startPan(e) {
-        isPanning = true;
-        startX = e.pageX || e.touches[0].pageX;
-        startY = e.pageY || e.touches[0].pageY;
-        scrollLeft = lightboxContent.scrollLeft;
-        scrollTop = lightboxContent.scrollTop;
-        lightboxContent.style.cursor = 'grabbing';
-    }
-
-    function endPan() {
-        isPanning = false;
-        lightboxContent.style.cursor = 'grab';
-    }
-
-    function panMove(e) {
-        if (!isPanning) return;
-        e.preventDefault();
-        const x = e.pageX || e.touches[0].pageX;
-        const y = e.pageY || e.touches[0].pageY;
-        const walkX = x - startX;
-        const walkY = y - startY;
-        lightboxContent.scrollLeft = scrollLeft - walkX;
-        lightboxContent.scrollTop = scrollTop - walkY;
-    }
-
-    lightboxContent.addEventListener('mousedown', startPan);
-    lightboxContent.addEventListener('touchstart', startPan, { passive: false });
-    lightboxContent.addEventListener('mouseup', endPan);
-    lightboxContent.addEventListener('touchend', endPan);
-    lightboxContent.addEventListener('mousemove', panMove);
-    lightboxContent.addEventListener('touchmove', panMove, { passive: false });
-    lightboxContent.addEventListener('mouseleave', endPan);
-}
-
-function disablePanning() {
-    lightboxContent.style.cursor = 'default';
-    lightboxContent.removeEventListener('mousedown', startPan);
-    lightboxContent.removeEventListener('touchstart', startPan);
-    lightboxContent.removeEventListener('mouseup', endPan);
-    lightboxContent.removeEventListener('touchend', endPan);
-    lightboxContent.removeEventListener('mousemove', panMove);
-    lightboxContent.removeEventListener('touchmove', panMove);
-    lightboxContent.removeEventListener('mouseleave', endPan);
-}
-
 
         lightboxClose.addEventListener('click', closeLightbox);
         lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
