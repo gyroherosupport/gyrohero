@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .gallery-item {
+            margin: 10px;
+        }
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="width: 100%; text-align: center;">Art Gallery</h1>
+
+<script>
+    const images = [
+        {% for filename in site.static_files %}
+            {% if filename.path contains 'art/' %}
+                "{{ filename.path | relative_url }}",
+            {% endif %}
+        {% endfor %}
+    ];
+
+    const gallery = document.createElement('div');
+    gallery.classList.add('gallery');
+
+    images.forEach(image => {
+        const imgContainer = document.createElement('div');
+        imgContainer.classList.add('gallery-item');
+
+        const img = document.createElement('img');
+        img.src = image;
+        img.alt = image.split('/').pop();
+
+        imgContainer.appendChild(img);
+        gallery.appendChild(imgContainer);
+    });
+
+    document.body.appendChild(gallery);
+</script>
+
+</body>
+</html>
