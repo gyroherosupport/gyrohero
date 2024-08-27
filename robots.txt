@@ -2,3 +2,5 @@ User-agent: *
 Disallow: /art/
 Disallow: /terms.html
 Disallow: /privacy.html
+
+Sitemap: https://gyroherosupport.github.io/sitemap.xml
