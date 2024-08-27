@@ -244,51 +244,58 @@
             openLightbox(currentIndex);
         }
 
-        function enablePanning() {
-            const content = lightboxImg.style.display === 'block' ? lightboxImg : lightboxVideo;
-            content.style.cursor = 'grab';
-            let isPanning = false;
-            let startX = 0, startY = 0, scrollLeft = 0, scrollTop = 0;
+function enablePanning() {
+    const content = lightboxImg.style.display === 'block' ? lightboxImg : lightboxVideo;
+    lightboxContent.style.cursor = 'grab';
 
-            function startPan(e) {
-                isPanning = true;
-                startX = e.pageX - content.offsetLeft;
-                startY = e.pageY - content.offsetTop;
-                scrollLeft = lightboxContent.scrollLeft;
-                scrollTop = lightboxContent.scrollTop;
-                content.style.cursor = 'grabbing';
-            }
+    let isPanning = false;
+    let startX = 0, startY = 0, scrollLeft = 0, scrollTop = 0;
 
-            function endPan() {
-                isPanning = false;
-                content.style.cursor = 'grab';
-            }
+    function startPan(e) {
+        isPanning = true;
+        startX = e.pageX || e.touches[0].pageX;
+        startY = e.pageY || e.touches[0].pageY;
+        scrollLeft = lightboxContent.scrollLeft;
+        scrollTop = lightboxContent.scrollTop;
+        lightboxContent.style.cursor = 'grabbing';
+    }
 
-            function panMove(e) {
-                if (!isPanning) return;
-                e.preventDefault();
-                const x = e.pageX - content.offsetLeft;
-                const y = e.pageY - content.offsetTop;
-                const walkX = x - startX;
-                const walkY = y - startY;
-                lightboxContent.scrollLeft = scrollLeft - walkX;
-                lightboxContent.scrollTop = scrollTop - walkY;
-            }
+    function endPan() {
+        isPanning = false;
+        lightboxContent.style.cursor = 'grab';
+    }
 
-            content.addEventListener('mousedown', startPan);
-            content.addEventListener('mouseup', endPan);
-            content.addEventListener('mousemove', panMove);
-            content.addEventListener('mouseleave', endPan);
-        }
+    function panMove(e) {
+        if (!isPanning) return;
+        e.preventDefault();
+        const x = e.pageX || e.touches[0].pageX;
+        const y = e.pageY || e.touches[0].pageY;
+        const walkX = x - startX;
+        const walkY = y - startY;
+        lightboxContent.scrollLeft = scrollLeft - walkX;
+        lightboxContent.scrollTop = scrollTop - walkY;
+    }
 
-        function disablePanning() {
-            const content = lightboxImg.style.display === 'block' ? lightboxImg : lightboxVideo;
-            content.style.cursor = 'default';
-            content.removeEventListener('mousedown', startPan);
-            content.removeEventListener('mouseup', endPan);
-            content.removeEventListener('mousemove', panMove);
-            content.removeEventListener('mouseleave', endPan);
-        }
+    lightboxContent.addEventListener('mousedown', startPan);
+    lightboxContent.addEventListener('touchstart', startPan, { passive: false });
+    lightboxContent.addEventListener('mouseup', endPan);
+    lightboxContent.addEventListener('touchend', endPan);
+    lightboxContent.addEventListener('mousemove', panMove);
+    lightboxContent.addEventListener('touchmove', panMove, { passive: false });
+    lightboxContent.addEventListener('mouseleave', endPan);
+}
+
+function disablePanning() {
+    lightboxContent.style.cursor = 'default';
+    lightboxContent.removeEventListener('mousedown', startPan);
+    lightboxContent.removeEventListener('touchstart', startPan);
+    lightboxContent.removeEventListener('mouseup', endPan);
+    lightboxContent.removeEventListener('touchend', endPan);
+    lightboxContent.removeEventListener('mousemove', panMove);
+    lightboxContent.removeEventListener('touchmove', panMove);
+    lightboxContent.removeEventListener('mouseleave', endPan);
+}
+
 
         lightboxClose.addEventListener('click', closeLightbox);
         lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
