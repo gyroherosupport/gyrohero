@@ -1,0 +1,13 @@
+<html>
+<head>
+    <script type="text/javascript">
+        window.location.replace("gyrohero://achievements");
+        setTimeout(function(){
+            window.location.replace("https://apps.apple.com/us/app/gyrohero-gyroscope-challenge/id6532621812");
+        }, 1000);
+    </script>
+</head>
+<body>
+    <p>If you are not redirected, <a href="gyrohero://achievements">click here</a>. If the app is not installed, <a href="https://apps.apple.com/us/app/gyrohero-gyroscope-challenge/id6532621812">download it here</a>.</p>
+</body>
+</html>
