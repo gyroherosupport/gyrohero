@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achievements</title>
-    <script type="text/javascript">
-        // Try to open the app using the custom URL scheme
-        window.location.replace("gyrohero://achievements");
-        
-        // If the app does not open, redirect to the App Store after 1 second
-        setTimeout(function(){
-            window.location.replace("https://apps.apple.com/us/app/gyrohero-gyroscope-challenge/id6532621812");
-        }, 1000);
-    </script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected, <a href="gyrohero://achievements">click here</a>.</p>
-    <p>If the app is not installed, <a href="https://apps.apple.com/us/app/gyrohero-gyroscope-challenge/id6532621812">download it here</a>.</p>
+    <h1>Opening Achievements...</h1>
+    <p>If you are not redirected, <a id="appLink" href="gyrohero://achievements">click here</a>.</p>
+    <p>If the app is not installed, <a id="storeLink" href="https://apps.apple.com/us/app/gyrohero-gyroscope-challenge/id6532621812">download it here</a>.</p>
+    
+    <script type="text/javascript">
+        // Attempt to open the custom URL scheme
+        var appLink = document.getElementById('appLink').href;
+        window.location.href = appLink;
+
+        // Set a timer to redirect to the App Store if the app doesn't open
+        setTimeout(function(){
+            var storeLink = document.getElementById('storeLink').href;
+            window.location.href = storeLink;
+        }, 1500);  // Slightly increased timeout to allow for app opening
+    </script>
 </body>
 </html>
