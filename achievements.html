@@ -1,13 +1,21 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
     <script type="text/javascript">
+        // Try to open the app using the custom URL scheme
         window.location.replace("gyrohero://achievements");
+        
+        // If the app does not open, redirect to the App Store after 1 second
         setTimeout(function(){
             window.location.replace("https://apps.apple.com/us/app/gyrohero-gyroscope-challenge/id6532621812");
         }, 1000);
     </script>
 </head>
 <body>
-    <p>If you are not redirected, <a href="gyrohero://achievements">click here</a>. If the app is not installed, <a href="https://apps.apple.com/us/app/gyrohero-gyroscope-challenge/id6532621812">download it here</a>.</p>
+    <p>If you are not redirected, <a href="gyrohero://achievements">click here</a>.</p>
+    <p>If the app is not installed, <a href="https://apps.apple.com/us/app/gyrohero-gyroscope-challenge/id6532621812">download it here</a>.</p>
 </body>
 </html>
