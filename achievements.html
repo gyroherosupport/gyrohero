@@ -9,8 +9,20 @@
     </style>
 </head>
 <body>
-    <h1>Check Out Your Achievements!</h1>
-    <p>To view your achievements, open the GyroHero app.</p>
-    <p>If you don't have the app installed, <a href="https://apps.apple.com/us/app/gyrohero-gyroscope-challenge/id6532621812">download it here</a>.</p>
+    <h1>Opening Achievements...</h1>
+    <p>If you are not redirected, <a id="appLink" href="gyrohero://achievements">click here</a>.</p>
+    <p>If the app is not installed, <a id="storeLink" href="https://apps.apple.com/us/app/gyrohero-gyroscope-challenge/id6532621812">download it here</a>.</p>
+    
+    <script type="text/javascript">
+        // Attempt to open the custom URL scheme
+        var appLink = document.getElementById('appLink').href;
+        window.location.href = appLink;
+
+        // Set a timer to redirect to the App Store if the app doesn't open
+        setTimeout(function(){
+            var storeLink = document.getElementById('storeLink').href;
+            window.location.href = storeLink;
+        }, 1500);  // Slightly increased timeout to allow for app opening
+    </script>
 </body>
 </html>
